@@ -60,11 +60,11 @@ import org.apache.hadoop.mapreduce.*;
 public class Task1Mapper extends Mapper<LongWritable, Text, Text, IntWritable> {
 	public void map(LongWritable key, Text value, Context context) 
 			throws IOException, InterruptedException {
-		String[] lineArray = value.toString().split(",");//splitting record
-		if(!lineArray[0].equals(" "))//validatiting record
+		String[] lineArray = value.toString().split(",");
+		if(!lineArray[0].equals(" "))//validatiting
 		{
 		Text total = new Text("Total Passengers");
-		context.write(total,new IntWritable(1));//counting total passengers
+		context.write(total,new IntWritable(1));//counting total
 		}
 	}
 }
